@@ -146,11 +146,10 @@ def play(board)
     until over?(board)
         turn(board)
     end
-    puts won?(board);
-    # if won?(board) != false
+    if won?(board) != false
     #     return "Congratulations #{winner(board)}"
     # elsif draw?(board)
     #     return "Cat's Game!"
-    # end
+    end
 end
 play(board)
