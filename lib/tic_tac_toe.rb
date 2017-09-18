@@ -100,14 +100,13 @@ def full?(board)
         pos != " "
     end
 end
-
+# elsif won?(board) == false && full?(board) == false
+#     return false
 def draw?(board)
     if won?(board) ==  false && full?(board)
         return true
-    # elsif won?(board) == false && full?(board) == false
-    #     return false
-        else
-            return false
+    else
+        return false
     end
 end
 
