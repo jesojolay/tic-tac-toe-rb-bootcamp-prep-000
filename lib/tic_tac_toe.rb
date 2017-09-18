@@ -12,8 +12,8 @@ def input_to_index(user_input)
 end
 
 # code your move and move method here!
-def move(board ,index, token = "X")
-    board[index] = token;
+def move(board, index, current_player = "X")
+  board[index] = current_player
 end
 
 def position_taken?(board , index)
