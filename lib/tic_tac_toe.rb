@@ -151,4 +151,4 @@ def play(board)
         return "Cat's Game!"
     end
 end
-play(board)
+puts play(board)
