@@ -7,16 +7,15 @@ def display_board(board)
 end
 
 # code your input_to_index and move method here!
-def input_to_index(user_input)
-    input = user_input.to_i;
-    input = input - 1;
+def input_to_index(index)
+    input = index.to_i
+    input  = input - 1
     return input
 end
 
 # code your move and move method here!
-def move(board,input,char = "X")
-    board[input] = char
-    return board
+def move(board ,index, token = "X")
+    board[index] = token;
 end
 
 def position_taken?(board , index)
@@ -29,18 +28,24 @@ end
 
 # code your #valid_move? method here
 def valid_move?(board, index)
-    if index.between?(0,8) && (position_taken?(board,index) == false)
+    if index.between?(0,8) && (board[index] == " " || board[index] == "" || board[index] == nil)
         return true
-    elsif position_taken?(board,index) == true || position_taken?(board,index) == false
+    else
         return false
     end
 end
 
-# re-define your #position_taken? method here, so that you can use it in the #valid_move? method above.
-def position_taken?(board,index)
-    if board[index] == " " || board[index] == "" || board[index] == nil
-        return false
-    else
-        return true
+def turn(board)
+    puts "Please enter 1-9:"
+    input = gets.chomp
+    input = input_to_index(input)
+    truth = valid_move?(board,input)
+    until truth
+        puts "invalid move, Please enter 1-9:"
+        input = gets.chomp
+        input = input_to_index(input)
+        truth = valid_move?(board,input)
     end
+    move(board,input)
+    display_board(board)
 end
