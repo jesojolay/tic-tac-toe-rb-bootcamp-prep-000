@@ -103,8 +103,12 @@ end
 # elsif won?(board) == false && full?(board) == false
 #     return false
 def draw?(board)
-    if won?(board) ==  false && full?(board)
+    won = won?(board)
+    full = full?(board)
+    if won ==  false && full
         return true
+    elsif won == false && full == false
+        return false
     else
         return false
     end
