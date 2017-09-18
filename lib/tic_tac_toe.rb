@@ -146,7 +146,7 @@ def play(board)
     until over?(board)
         turn(board)
     end
-    if won?(board) != false && draw?(board) == false
+    if won?(board) != false
         return "Congratulations #{winner(board)}"
     elsif won?(board) == false && draw?(board)
         return "Cat's Game!"
