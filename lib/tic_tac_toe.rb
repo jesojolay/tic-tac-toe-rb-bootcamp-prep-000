@@ -147,8 +147,8 @@ def play(board)
         turn(board)
     end
     if won?(board) != false && draw?(board) == false
-        "congrats! #{winner} for winning!"
+        "congrats! #{winner(board)} for winning!"
     elsif won?(board) == false && draw?(board)
-        "it was a draw!"    
+        "it was a draw!"
     end
 end
