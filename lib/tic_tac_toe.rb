@@ -1,3 +1,4 @@
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 def display_board(board)
     puts " #{board[0]} | #{board[1]} | #{board[2]} "
     puts "-----------"
@@ -143,5 +144,5 @@ def play(board)
     until over?(board)
         turn(board)
     end
-    
+
 end
