@@ -37,15 +37,6 @@ def turn(board)
   end
 end
 
-
-def play(board)
-    turn = 0
-    while turn < 9
-        turn(board)
-        turn+=1
-    end
-end
-
 def turn_count(board)
     counter = 0
 board.each do |spot|
